@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maverick Aerial Services — Coming Soon</title>
+  <meta name="description" content="Aerial photo, inspection, and mapping for Eagle Pass and Maverick County. Waitlist open. Commercial flights start after FAA Part 107 certification." />
+  <meta name="theme-color" content="#0b1220" />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-2: #121b2d;
+      --card: #162238;
+      --line: #2a3b5a;
+      --text: #e8eef8;
+      --muted: #9aabc4;
+      --accent: #3dd6c6;
+      --accent-2: #f0c14b;
+      --danger: #f0a36b;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1a2a48 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: var(--accent); }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 0 8px;
+    }
+    .brand { font-weight: 750; letter-spacing: .02em; }
+    .brand span { color: var(--accent); }
+    .lang {
+      border: 1px solid var(--line); background: var(--card); color: var(--text);
+      border-radius: 999px; padding: 8px 12px; cursor: pointer; font-weight: 600;
+    }
+    .hero { padding: 42px 0 18px; }
+    .kicker {
+      display: inline-block; border: 1px solid var(--line); color: var(--accent-2);
+      border-radius: 999px; padding: 6px 10px; font-size: 12px; letter-spacing: .08em;
+      text-transform: uppercase; margin-bottom: 14px;
+    }
+    h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.05; margin: 0 0 14px; }
+    .lede { color: var(--muted); font-size: 18px; max-width: 640px; }
+    .notice {
+      margin: 22px 0 0; padding: 12px 14px; border-left: 3px solid var(--danger);
+      background: #241a12; color: #f3d7bb; max-width: 720px;
+    }
+    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 28px 0; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+    section { padding: 12px 0 28px; }
+    h2 { font-size: 26px; margin: 0 0 10px; }
+    form { display: grid; gap: 10px; }
+    label { font-size: 13px; color: var(--muted); }
+    input, select, textarea {
+      width: 100%; background: var(--bg-2); color: var(--text);
+      border: 1px solid var(--line); border-radius: 10px; padding: 12px 12px; font: inherit;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    button[type=submit] {
+      background: var(--accent); color: #06221f; border: 0; border-radius: 10px;
+      padding: 12px 16px; font-weight: 750; cursor: pointer; width: fit-content;
+    }
+    .ok { display: none; color: var(--accent); font-weight: 650; }
+    .faq details {
+      background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+      padding: 12px 14px; margin: 8px 0;
+    }
+    footer { color: var(--muted); font-size: 13px; padding: 28px 0 48px; border-top: 1px solid var(--line); }
+    [data-lang="es"] .en { display: none; }
+    [data-lang="en"] .es { display: none; }
+  </style>
+</head>
+<body data-lang="en">
+  <div class="wrap">
+    <header>
+      <div class="brand">Maverick <span>Aerial</span></div>
+      <button class="lang" id="langBtn" type="button">ES</button>
+    </header>
+
+    <div class="hero">
+      <div class="kicker en">Coming soon · Eagle Pass, TX</div>
+      <div class="kicker es">Próximamente · Eagle Pass, TX</div>
+      <h1 class="en">Aerial work for the border. Site first. Flights after the certificate.</h1>
+      <h1 class="es">Trabajo aéreo para la frontera. Primero el sitio. Los vuelos, después del certificado.</h1>
+      <p class="lede en">Maverick Aerial Services is standing up a local drone shop for photo, inspection, and mapping jobs around Eagle Pass and Maverick County. The waitlist is open. Commercial flights are not.</p>
+      <p class="lede es">Maverick Aerial Services está armando un taller local de drones para foto, inspección y mapeo en Eagle Pass y el Condado Maverick. La lista de espera ya está abierta. Los vuelos comerciales, no.</p>
+      <p class="notice en">No commercial drone jobs are being booked yet. FAA Part 107 certification is still ahead. This page is so people can get in line now.</p>
+      <p class="notice es">Todavía no se reservan trabajos comerciales con dron. Falta la certificación FAA Part 107. Esta página existe para que la gente se apunte ahora.</p>
+    </div>
+
+    <section>
+      <h2 class="en">Planned work</h2>
+      <h2 class="es">Trabajo previsto</h2>
+      <div class="grid">
+        <article class="card">
+          <h3 class="en">Roofs and buildings</h3>
+          <h3 class="es">Techos y edificios</h3>
+          <p class="en">Condition photos and video for roofs, warehouses, and job sites. Useful before you climb or guess.</p>
+          <p class="es">Fotos y video del estado de techos, bodegas y obras. Útil antes de subir o adivinar.</p>
+        </article>
+        <article class="card">
+          <h3 class="en">Property and listings</h3>
+          <h3 class="es">Propiedades y listados</h3>
+          <p class="en">Clean aerial stills and short clips for land, houses, and commercial buildings.</p>
+          <p class="es">Tomas aéreas limpias y clips cortos para tierra, casas y edificios comerciales.</p>
+        </article>
+        <article class="card">
+          <h3 class="en">Ranch and acreage</h3>
+          <h3 class="es">Ranchos y predios</h3>
+          <p class="en">Fence lines, water, flood paths, and wide shots that a ground walk misses.</p>
+          <p class="es">Líneas de cerco, agua, cauces y tomas amplias que a pie se pierden.</p>
+        </article>
+        <article class="card">
+          <h3 class="en">Mapping when it is needed</h3>
+          <h3 class="es">Mapeo cuando haga falta</h3>
+          <p class="en">Orthos and progress sets for sites that need a record, not just a pretty photo.</p>
+          <p class="es">Ortos y series de avance para sitios que necesitan un registro, no solo una foto bonita.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="en">Service area</h2>
+      <h2 class="es">Zona de servicio</h2>
+      <p class="en muted">Eagle Pass, Maverick County, Del Rio, and nearby ranches. Farther jobs only after the shop is actually flying.</p>
+      <p class="es muted">Eagle Pass, Condado Maverick, Del Rio y ranchos cercanos. Trabajos más lejos solo cuando el taller ya esté volando.</p>
+    </section>
+
+    <section class="card" id="waitlist">
+      <h2 class="en">Get on the list</h2>
+      <h2 class="es">Apúntese a la lista</h2>
+      <p class="en">Tell us the job type and the town. This is interest only — not a booking.</p>
+      <p class="es">Diga el tipo de trabajo y el pueblo. Esto es interés, no una reserva.</p>
+      <form id="waitForm">
+        <div>
+          <label class="en" for="name">Name</label>
+          <label class="es" for="name">Nombre</label>
+          <input id="name" name="name" required autocomplete="name" />
+        </div>
+        <div>
+          <label class="en" for="email">Email or phone</label>
+          <label class="es" for="email">Correo o teléfono</label>
+          <input id="email" name="contact" required />
+        </div>
+        <div>
+          <label class="en" for="kind">Job type</label>
+          <label class="es" for="kind">Tipo de trabajo</label>
+          <select id="kind" name="kind">
+            <option class="en" value="roof">Roof / building</option>
+            <option class="es" value="roof">Techo / edificio</option>
+            <option class="en" value="property">Property photos</option>
+            <option class="es" value="property">Fotos de propiedad</option>
+            <option class="en" value="ranch">Ranch / acreage</option>
+            <option class="es" value="ranch">Rancho / predio</option>
+            <option class="en" value="map">Mapping</option>
+            <option class="es" value="map">Mapeo</option>
+            <option class="en" value="other">Other</option>
+            <option class="es" value="other">Otro</option>
+          </select>
+        </div>
+        <div>
+          <label class="en" for="town">Town</label>
+          <label class="es" for="town">Pueblo</label>
+          <input id="town" name="town" placeholder="Eagle Pass" />
+        </div>
+        <div>
+          <label class="en" for="notes">Notes</label>
+          <label class="es" for="notes">Notas</label>
+          <textarea id="notes" name="notes"></textarea>
+        </div>
+        <button type="submit" class="en">Send waitlist note</button>
+        <button type="submit" class="es">Enviar nota de lista</button>
+        <p class="ok" id="thanks"></p>
+      </form>
+    </section>
+
+    <section class="faq">
+      <h2 class="en">Straight answers</h2>
+      <h2 class="es">Respuestas directas</h2>
+      <details open>
+        <summary class="en">Can I hire you this week?</summary>
+        <summary class="es">¿Puedo contratarlos esta semana?</summary>
+        <p class="en">No. Commercial drone work in the U.S. needs an FAA Part 107 Remote Pilot Certificate. That is not in hand yet. Join the waitlist and we contact you when flights are legal to sell.</p>
+        <p class="es">No. El trabajo comercial con dron en EE. UU. requiere el certificado FAA Part 107. Todavía no lo tenemos. Entra a la lista y avisamos cuando ya se pueda vender el vuelo de forma legal.</p>
+      </details>
+      <details>
+        <summary class="en">Why put a website up now?</summary>
+        <summary class="es">¿Por qué publicar el sitio ahora?</summary>
+        <p class="en">So the name, the area, and the waitlist exist before the certificate. A page is not a flight.</p>
+        <p class="es">Para que el nombre, la zona y la lista existan antes del certificado. Una página no es un vuelo.</p>
+      </details>
+      <details>
+        <summary class="en">Do you fly recreational jobs in the meantime?</summary>
+        <summary class="es">¿Vuelan por diversión mientras tanto?</summary>
+        <p class="en">This site is not taking paid work and is not a booking desk for hobby flights either. If that changes, the page will say so in plain language.</p>
+        <p class="es">Este sitio no toma trabajo pagado y tampoco es una mesa de reservas para vuelos de hobby. Si eso cambia, la página lo va a decir en lenguaje claro.</p>
+      </details>
+    </section>
+
+    <footer>
+      <p class="en">Maverick Aerial Services · Eagle Pass, Texas. Independent local shop. Not affiliated with any government office or appraisal district.</p>
+      <p class="es">Maverick Aerial Services · Eagle Pass, Texas. Taller local independiente. No está afiliado a ninguna oficina de gobierno ni distrito de valuación.</p>
+      <p class="en">Edit CONTACT_EMAIL in this file before you share the link.</p>
+      <p class="es">Edite CONTACT_EMAIL en este archivo antes de compartir el enlace.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Change this before you send the page to anyone.
+    const CONTACT_EMAIL = "YOUR_EMAIL_HERE";
+
+    const root = document.body;
+    const btn = document.getElementById("langBtn");
+    const saved = localStorage.getItem("ma-lang") || "en";
+    setLang(saved);
+
+    btn.addEventListener("click", () => setLang(root.getAttribute("data-lang") === "en" ? "es" : "en"));
+
+    function setLang(lang) {
+      root.setAttribute("data-lang", lang);
+      btn.textContent = lang === "en" ? "ES" : "EN";
+      localStorage.setItem("ma-lang", lang);
+    }
+
+    document.getElementById("waitForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const contact = document.getElementById("email").value.trim();
+      const kind = document.getElementById("kind").value;
+      const town = document.getElementById("town").value.trim();
+      const notes = document.getElementById("notes").value.trim();
+      const body = [
+        "Maverick Aerial waitlist",
+        "Name: " + name,
+        "Contact: " + contact,
+        "Job: " + kind,
+        "Town: " + town,
+        "Notes: " + notes
+      ].join("\n");
+      const thanks = document.getElementById("thanks");
+      thanks.style.display = "block";
+      if (!CONTACT_EMAIL || CONTACT_EMAIL === "YOUR_EMAIL_HERE") {
+        thanks.textContent = root.getAttribute("data-lang") === "es"
+          ? "Guardado en este aparato. Ponga su correo en CONTACT_EMAIL para que el botón abra el mail."
+          : "Saved on this device. Put your address in CONTACT_EMAIL so the button can open mail.";
+        return;
+      }
+      window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Maverick Aerial waitlist") + "&body=" + encodeURIComponent(body);
+      thanks.textContent = root.getAttribute("data-lang") === "es"
+        ? "Si el correo no se abrió, anote el dato y mándelo a mano."
+        : "If mail did not open, copy the note and send it yourself.";
+    });
+  </script>
+</body>
+</html>
