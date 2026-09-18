@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maverick Aerial Services — Coming Soon</title>
+  <title>Brush Country Aerial — Coming Soon</title>
   <meta name="description" content="Aerial photo, inspection, and mapping for Eagle Pass and Maverick County. Waitlist open. Commercial flights start after FAA Part 107 certification." />
   <meta name="theme-color" content="#0b1220" />
   <style>
@@ -46,6 +46,7 @@
     }
     h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.05; margin: 0 0 14px; }
     .lede { color: var(--muted); font-size: 18px; max-width: 640px; }
+    .muted { color: var(--muted); }
     .notice {
       margin: 22px 0 0; padding: 12px 14px; border-left: 3px solid var(--danger);
       background: #241a12; color: #f3d7bb; max-width: 720px;
@@ -82,17 +83,17 @@
 <body data-lang="en">
   <div class="wrap">
     <header>
-      <div class="brand">Maverick <span>Aerial</span></div>
+      <div class="brand">Brush Country <span>Aerial</span></div>
       <button class="lang" id="langBtn" type="button">ES</button>
     </header>
 
     <div class="hero">
       <div class="kicker en">Coming soon · Eagle Pass, TX</div>
       <div class="kicker es">Próximamente · Eagle Pass, TX</div>
-      <h1 class="en">Aerial work for the border. Site first. Flights after the certificate.</h1>
-      <h1 class="es">Trabajo aéreo para la frontera. Primero el sitio. Los vuelos, después del certificado.</h1>
-      <p class="lede en">Maverick Aerial Services is standing up a local drone shop for photo, inspection, and mapping jobs around Eagle Pass and Maverick County. The waitlist is open. Commercial flights are not.</p>
-      <p class="lede es">Maverick Aerial Services está armando un taller local de drones para foto, inspección y mapeo en Eagle Pass y el Condado Maverick. La lista de espera ya está abierta. Los vuelos comerciales, no.</p>
+      <h1 class="en">Aerial work for the brush country. Site first. Flights after the certificate.</h1>
+      <h1 class="es">Trabajo aéreo para el brush country. Primero el sitio. Los vuelos, después del certificado.</h1>
+      <p class="lede en">Brush Country Aerial is standing up a local drone shop for photo, inspection, and mapping jobs around Eagle Pass and Maverick County. The waitlist is open. Commercial flights are not.</p>
+      <p class="lede es">Brush Country Aerial está armando un taller local de drones para foto, inspección y mapeo en Eagle Pass y el Condado Maverick. La lista de espera ya está abierta. Los vuelos comerciales, no.</p>
       <p class="notice en">No commercial drone jobs are being booked yet. FAA Part 107 certification is still ahead. This page is so people can get in line now.</p>
       <p class="notice es">Todavía no se reservan trabajos comerciales con dron. Falta la certificación FAA Part 107. Esta página existe para que la gente se apunte ahora.</p>
     </div>
@@ -154,18 +155,7 @@
         <div>
           <label class="en" for="kind">Job type</label>
           <label class="es" for="kind">Tipo de trabajo</label>
-          <select id="kind" name="kind">
-            <option class="en" value="roof">Roof / building</option>
-            <option class="es" value="roof">Techo / edificio</option>
-            <option class="en" value="property">Property photos</option>
-            <option class="es" value="property">Fotos de propiedad</option>
-            <option class="en" value="ranch">Ranch / acreage</option>
-            <option class="es" value="ranch">Rancho / predio</option>
-            <option class="en" value="map">Mapping</option>
-            <option class="es" value="map">Mapeo</option>
-            <option class="en" value="other">Other</option>
-            <option class="es" value="other">Otro</option>
-          </select>
+          <select id="kind" name="kind"></select>
         </div>
         <div>
           <label class="en" for="town">Town</label>
@@ -207,42 +197,76 @@
     </section>
 
     <footer>
-      <p class="en">Maverick Aerial Services · Eagle Pass, Texas. Independent local shop. Not affiliated with any government office or appraisal district.</p>
-      <p class="es">Maverick Aerial Services · Eagle Pass, Texas. Taller local independiente. No está afiliado a ninguna oficina de gobierno ni distrito de valuación.</p>
+      <p class="en">Brush Country Aerial · Eagle Pass, Texas. Independent local shop. Not affiliated with any government office or appraisal district.</p>
+      <p class="es">Brush Country Aerial · Eagle Pass, Texas. Taller local independiente. No está afiliado a ninguna oficina de gobierno ni distrito de valuación.</p>
       <p class="en">Edit CONTACT_EMAIL in this file before you share the link.</p>
       <p class="es">Edite CONTACT_EMAIL en este archivo antes de compartir el enlace.</p>
     </footer>
   </div>
 
   <script>
-    // Change this before you send the page to anyone.
     const CONTACT_EMAIL = "YOUR_EMAIL_HERE";
+    const JOBS = {
+      en: [
+        ["roof", "Roof / building"],
+        ["property", "Property photos"],
+        ["ranch", "Ranch / acreage"],
+        ["map", "Mapping"],
+        ["other", "Other"]
+      ],
+      es: [
+        ["roof", "Techo / edificio"],
+        ["property", "Fotos de propiedad"],
+        ["ranch", "Rancho / predio"],
+        ["map", "Mapeo"],
+        ["other", "Otro"]
+      ]
+    };
 
     const root = document.body;
     const btn = document.getElementById("langBtn");
-    const saved = localStorage.getItem("ma-lang") || "en";
+    const kind = document.getElementById("kind");
+    const saved = localStorage.getItem("bca-lang") || localStorage.getItem("ma-lang") || "en";
     setLang(saved);
 
     btn.addEventListener("click", () => setLang(root.getAttribute("data-lang") === "en" ? "es" : "en"));
 
+    function fillJobs(lang) {
+      const keep = kind.value;
+      kind.innerHTML = "";
+      JOBS[lang].forEach(([value, label]) => {
+        const opt = document.createElement("option");
+        opt.value = value;
+        opt.textContent = label;
+        kind.appendChild(opt);
+      });
+      if ([...kind.options].some((o) => o.value === keep)) kind.value = keep;
+    }
+
     function setLang(lang) {
       root.setAttribute("data-lang", lang);
+      document.documentElement.lang = lang;
       btn.textContent = lang === "en" ? "ES" : "EN";
-      localStorage.setItem("ma-lang", lang);
+      localStorage.setItem("bca-lang", lang);
+      fillJobs(lang);
     }
 
     document.getElementById("waitForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const name = document.getElementById("name").value.trim();
       const contact = document.getElementById("email").value.trim();
-      const kind = document.getElementById("kind").value;
+      const job = kind.value;
       const town = document.getElementById("town").value.trim();
       const notes = document.getElementById("notes").value.trim();
+      const lead = { name, contact, job, town, notes, at: new Date().toISOString() };
+      const leads = JSON.parse(localStorage.getItem("bca-leads") || "[]");
+      leads.push(lead);
+      localStorage.setItem("bca-leads", JSON.stringify(leads));
       const body = [
-        "Maverick Aerial waitlist",
+        "Brush Country Aerial waitlist",
         "Name: " + name,
         "Contact: " + contact,
-        "Job: " + kind,
+        "Job: " + job,
         "Town: " + town,
         "Notes: " + notes
       ].join("\n");
@@ -254,7 +278,7 @@
           : "Saved on this device. Put your address in CONTACT_EMAIL so the button can open mail.";
         return;
       }
-      window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Maverick Aerial waitlist") + "&body=" + encodeURIComponent(body);
+      window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Brush Country Aerial waitlist") + "&body=" + encodeURIComponent(body);
       thanks.textContent = root.getAttribute("data-lang") === "es"
         ? "Si el correo no se abrió, anote el dato y mándelo a mano."
         : "If mail did not open, copy the note and send it yourself.";
